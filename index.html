@@ -471,47 +471,67 @@
         </section>
 
         <!-- Carousel -->
-        <section id="carousel" class="py-16 bg-gray-900">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">
-                    Carrusel de Imágenes
-                </h2>
-                <div class="relative overflow-hidden rounded-lg">
+        <div class="flex items-center justify-center bg-gray-900">
+            <div class="relative overflow-hidden w-full max-w-lg">
+                <!-- Contenido del carrusel (slides, botones, indicadores) -->
+                <div
+                    id="frameworkCarouselItems"
+                    class="flex transition-transform duration-500 ease-out"
+                >
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                        alt="React"
+                        class="min-w-full h-40 object-contain"
+                    />
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg"
+                        alt="Angular"
+                        class="min-w-full h-40 object-contain"
+                    />
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+                        alt="Vue"
+                        class="min-w-full h-40 object-contain"
+                    />
+                </div>
+
+                <!-- Botones de navegación -->
+                <button
+                    id="prevFrameworkSlide"
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-800 p-2 rounded-full shadow hover:bg-white"
+                >
+                    ❮
+                </button>
+                <button
+                    id="nextFrameworkSlide"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 text-gray-800 p-2 rounded-full shadow hover:bg-white"
+                >
+                    ❯
+                </button>
+
+                <!-- Indicadores -->
+                <div
+                    class="absolute bottom-4 left-0 right-0 flex justify-center gap-2"
+                >
                     <div
-                        class="flex transition-transform duration-500"
-                        id="carouselItems"
-                    >
-                        <img
-                            src="https://via.placeholder.com/600x300"
-                            alt="Imagen 1"
-                            class="w-full"
-                        />
-                        <img
-                            src="https://via.placeholder.com/600x300"
-                            alt="Imagen 2"
-                            class="w-full"
-                        />
-                        <img
-                            src="https://via.placeholder.com/600x300"
-                            alt="Imagen 3"
-                            class="w-full"
-                        />
-                    </div>
-                    <button
-                        id="prevSlide"
-                        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-3 py-2 rounded"
-                    >
-                        ❮
-                    </button>
-                    <button
-                        id="nextSlide"
-                        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-700 text-white px-3 py-2 rounded"
-                    >
-                        ❯
-                    </button>
+                        class="frameworkIndicator w-3 h-3 bg-white rounded-full bg-opacity-50"
+                    ></div>
+                    <div
+                        class="frameworkIndicator w-3 h-3 bg-white rounded-full bg-opacity-50"
+                    ></div>
+                    <div
+                        class="frameworkIndicator w-3 h-3 bg-white rounded-full bg-opacity-50"
+                    ></div>
+                    <div
+                        class="frameworkIndicator w-3 h-3 bg-white rounded-full bg-opacity-50"
+                    ></div>
+                    <div
+                        class="frameworkIndicator w-3 h-3 bg-white rounded-full bg-opacity-50"
+                    ></div>
                 </div>
             </div>
-        </section>
+        </div>
+
         <!-- Tarjetas Responsivas -->
         <section id="tarjetas" class="py-16 bg-gray-800">
             <div class="container mx-auto px-4">
@@ -596,13 +616,13 @@
                         </h3>
                         <div class="flex space-x-2">
                             <div
-                                class="flex-1 h-6 bg-green-500 rounded-full animate-staggered"
+                                class="flex-1 h-6 bg-green-500 rounded-full animate-loading animate-delay-1"
                             ></div>
                             <div
-                                class="flex-1 h-6 bg-blue-500 rounded-full animate-staggered"
+                                class="flex-1 h-6 bg-blue-500 rounded-full animate-loading animate-delay-2"
                             ></div>
                             <div
-                                class="flex-1 h-6 bg-purple-500 rounded-full animate-staggered"
+                                class="flex-1 h-6 bg-purple-500 rounded-full animate-loading animate-delay-3"
                             ></div>
                         </div>
                     </div>
@@ -630,72 +650,72 @@
                         </div>
                     </div>
 
-                    <!-- Progreso Vertical -->
-                    <div class="space-y-4">
-                        <h3 class="text-lg font-medium text-gray-300">
-                            Progreso Vertical
-                        </h3>
-                        <div
-                            class="relative w-10 h-32 bg-gray-800 rounded-lg shadow-lg"
-                        >
+                    <div class="flex justify-between">
+                        <!-- Progreso Vertical -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-medium text-gray-300">
+                                Progreso Vertical
+                            </h3>
                             <div
-                                class="absolute bottom-0 left-0 w-full bg-purple-500 rounded-b-lg animate-progress-vertical"
-                            ></div>
-                        </div>
-                    </div>
-
-                    <!-- Progreso Circular -->
-                    <div class="text-center space-y-4">
-                        <h3 class="text-lg font-medium text-gray-300">
-                            Progreso Circular
-                        </h3>
-                        <div class="relative w-32 h-32 mx-auto">
-                            <svg
-                                class="w-full h-full"
-                                viewBox="0 0 36 36"
-                                xmlns="http://www.w3.org/2000/svg"
+                                class="relative w-10 h-32 bg-gray-800 rounded-lg shadow-lg"
                             >
-                                <circle
-                                    class="text-gray-800 stroke-current"
-                                    stroke-width="3"
-                                    fill="none"
-                                    cx="18"
-                                    cy="18"
-                                    r="15"
-                                ></circle>
-                                <circle
-                                    class="text-blue-500 stroke-current animate-circle-progress"
-                                    stroke-width="3"
-                                    fill="none"
-                                    stroke-dasharray="94"
-                                    cx="18"
-                                    cy="18"
-                                    r="15"
-                                ></circle>
-                            </svg>
-                            <div
-                                class="absolute inset-0 flex items-center justify-center text-gray-100 font-bold text-lg"
-                            >
-                                Animando
+                                <div
+                                    class="absolute bottom-0 left-0 w-full bg-purple-500 rounded-b-lg animate-progress-vertical"
+                                ></div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Indicadores Pulsantes -->
-                    <div class="space-y-4">
-                        <h3 class="text-lg font-medium text-gray-300">
-                            Indicadores Pulsantes
-                        </h3>
-                        <div class="flex space-x-4">
-                            <div
-                                class="w-10 h-10 bg-blue-500 rounded-full animate-pulsate"
-                            ></div>
-                            <div
-                                class="w-10 h-10 bg-red-500 rounded-full animate-pulsate"
-                            ></div>
-                            <div
-                                class="w-10 h-10 bg-green-500 rounded-full animate-pulsate"
-                            ></div>
+                        <!-- Progreso Circular -->
+                        <div class="text-center space-y-4">
+                            <h3 class="text-lg font-medium text-gray-300">
+                                Progreso Circular
+                            </h3>
+                            <div class="relative w-32 h-32 mx-auto">
+                                <svg
+                                    class="w-full h-full"
+                                    viewBox="0 0 36 36"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        class="text-gray-800 stroke-current"
+                                        stroke-width="3"
+                                        fill="none"
+                                        cx="18"
+                                        cy="18"
+                                        r="15"
+                                    ></circle>
+                                    <circle
+                                        class="text-blue-500 stroke-current animate-circle-progress"
+                                        stroke-width="3"
+                                        fill="none"
+                                        stroke-dasharray="94"
+                                        cx="18"
+                                        cy="18"
+                                        r="15"
+                                    ></circle>
+                                </svg>
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-gray-100 font-bold text-lg"
+                                >
+                                    Animando
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Indicadores Pulsantes -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-medium text-gray-300">
+                                Indicadores Pulsantes
+                            </h3>
+                            <div class="flex space-x-4">
+                                <div
+                                    class="w-10 h-10 bg-blue-500 rounded-full animate-pulsate"
+                                ></div>
+                                <div
+                                    class="w-10 h-10 bg-red-500 rounded-full animate-pulsate"
+                                ></div>
+                                <div
+                                    class="w-10 h-10 bg-green-500 rounded-full animate-pulsate"
+                                ></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -846,30 +866,13 @@
                     Accordion Mejorado
                 </h2>
                 <div class="space-y-6">
-                    <!-- Accordion Básico -->
-                    <div class="border border-gray-700 rounded-lg">
-                        <button
-                            class="w-full text-left bg-gray-700 text-gray-300 px-4 py-3 rounded-t-lg focus:outline-none hover:bg-gray-600"
-                            onclick="toggleAccordion('accordion1')"
-                        >
-                            ¿Qué es Tailwind CSS? (Básico)
-                        </button>
-                        <div
-                            id="accordion1"
-                            class="hidden bg-gray-800 text-gray-400 px-4 py-3 rounded-b-lg"
-                        >
-                            Tailwind CSS es un framework de utilidad primero
-                            para construir interfaces de usuario.
-                        </div>
-                    </div>
-
                     <!-- Accordion con Icono -->
                     <div class="border border-gray-700 rounded-lg">
                         <button
                             class="flex justify-between items-center w-full text-left bg-gray-700 text-gray-300 px-4 py-3 rounded-t-lg focus:outline-none hover:bg-gray-600"
                             onclick="toggleAccordion('accordion2')"
                         >
-                            <span>¿Por qué usar Tailwind CSS? (Con Icono)</span>
+                            <span>¿Por qué usar Tailwind CSS?</span>
                             <svg
                                 id="icon-accordion2"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -895,13 +898,13 @@
                         </div>
                     </div>
 
-                    <!-- Accordion Animado -->
+                    <!-- Accordion  -->
                     <div class="border border-gray-700 rounded-lg">
                         <button
                             class="w-full text-left bg-gray-700 text-gray-300 px-4 py-3 rounded-t-lg focus:outline-none hover:bg-gray-600"
                             onclick="toggleAccordion('accordion3')"
                         >
-                            ¿Cómo se instala Tailwind CSS? (Animado)
+                            ¿Cómo se instala Tailwind CSS?
                         </button>
                         <div
                             id="accordion3"

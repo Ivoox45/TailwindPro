@@ -5,3 +5,208 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Animación de scroll */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.scroll {
+    animation: scroll 20s linear infinite;
+}
+
+/* Animaciones de progreso horizontal */
+@keyframes progress {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+.progress {
+    animation: progress 3s ease-in-out infinite alternate;
+}
+
+/* Animaciones de progreso vertical */
+@keyframes progressVertical {
+    0% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+    100% {
+        height: 0%;
+    }
+}
+
+.progress-vertical {
+    animation: progressVertical 3s ease-in-out infinite alternate;
+}
+
+/* Animación de progreso circular */
+@keyframes circleProgress {
+    0% {
+        stroke-dashoffset: 94;
+    }
+    50% {
+        stroke-dashoffset: 47;
+    }
+    100% {
+        stroke-dashoffset: 94;
+    }
+}
+
+.circle-progress {
+    animation: circleProgress 3s ease-in-out infinite alternate;
+}
+
+/* Animación escalonada */
+@keyframes staggered {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.staggered {
+    animation: staggered 2s ease-in-out infinite;
+}
+
+/* Animación de pulsación */
+@keyframes pulsate {
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.pulsate {
+    animation: pulsate 1.5s ease-in-out infinite;
+}
+
+/* Animación de entrada del modal */
+@keyframes modalEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-enter {
+    animation: modalEnter 0.3s ease-out forwards;
+}
+
+/* Animación de salida del modal */
+@keyframes modalExit {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.modal-exit {
+    animation: modalExit 0.3s ease-in forwards;
+}
+
+/* Animación de desvanecimiento (entrada) */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animación de desvanecimiento (salida) */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+/* Animación de carga */
+@keyframes loading {
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-loading {
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+.animate-delay-1 {
+    animation-delay: 0s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.5s;
+}
+
+.animate-delay-3 {
+    animation-delay: 1s;
+}
+
+/* Carrusel Imagenes */
+#carouselItems {
+    display: flex;
+    transition: transform 0.5s ease; /* Animación suave */
+    width: 100%; /* Asegura que el ancho del contenedor incluya todas las imágenes */
+}
+
+#carouselItems img {
+    flex: 0 0 100%; /* Cada imagen ocupa el 100% del ancho visible */
+    max-width: 100%; /* Evita que las imágenes se deformen */
+}
+
+/* Indicadores activos */
+.indicator.active {
+    background-color: white;
+    width: 6px;
+    height: 6px;
+    transition: all 0.3s ease-in-out;
+}

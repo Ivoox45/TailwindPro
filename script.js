@@ -124,4 +124,38 @@ document.addEventListener("DOMContentLoaded", () => {
             accordionContent.classList.toggle("hidden");
         });
     });
+    // Framework Carousel Functionality
+    const frameworkCarouselItems = document.getElementById(
+        "frameworkCarouselItems"
+    );
+    if (frameworkCarouselItems) {
+        const totalFrameworkSlides = frameworkCarouselItems.children.length;
+        let currentFrameworkSlide = 0;
+
+        const updateFrameworkCarousel = () => {
+            frameworkCarouselItems.style.transform = `translateX(-${
+                currentFrameworkSlide * 100
+            }%)`;
+        };
+
+        document
+            .getElementById("prevFrameworkSlide")
+            .addEventListener("click", () => {
+                currentFrameworkSlide =
+                    (currentFrameworkSlide - 1 + totalFrameworkSlides) %
+                    totalFrameworkSlides;
+                updateFrameworkCarousel();
+            });
+
+        document
+            .getElementById("nextFrameworkSlide")
+            .addEventListener("click", () => {
+                currentFrameworkSlide =
+                    (currentFrameworkSlide + 1) % totalFrameworkSlides;
+                updateFrameworkCarousel();
+            });
+
+        // Initialize the framework carousel
+        updateFrameworkCarousel();
+    }
 });

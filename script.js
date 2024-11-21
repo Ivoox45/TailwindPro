@@ -115,15 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Accordion Functionality
-    document.querySelectorAll("[data-accordion-toggle]").forEach((button) => {
-        button.addEventListener("click", () => {
-            const accordionContent = document.getElementById(
-                button.dataset.accordionToggle
-            );
-            accordionContent.classList.toggle("hidden");
-        });
-    });
     // Framework Carousel Functionality
     const frameworkCarouselItems = document.getElementById(
         "frameworkCarouselItems"

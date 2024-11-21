@@ -210,3 +210,74 @@ html {
     height: 6px;
     transition: all 0.3s ease-in-out;
 }
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Ocultarlo inicialmente */
+    height: 100%;
+    width: 16rem; /* 64 en Tailwind equivale a 16rem */
+    background: linear-gradient(
+        to bottom,
+        #1e293b,
+        #0f172a
+    ); /* Gradiente de fondo */
+    color: #e2e8f0; /* Equivalente a text-gray-300 */
+    transition: right 0.3s ease-in-out; /* Transición suave para mostrar/ocultar */
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    border-left: 1px solid #334155; /* Borde del lado izquierdo */
+    z-index: 50;
+}
+
+#sidebar ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#sidebar ul li:hover {
+    background-color: #1e293b; /* Efecto hover */
+    cursor: pointer;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: #e2e8f0; /* Color del texto */
+    font-size: 1rem; /* Tamaño de la fuente */
+}
+
+#sidebar ul li a:hover {
+    color: #38bdf8; /* Azul claro para hover */
+}
+
+#closeSidebar {
+    color: #e2e8f0;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#closeSidebar:hover {
+    color: #38bdf8; /* Azul claro para hover */
+    transform: rotate(90deg); /* Animación al pasar el cursor */
+}
+
+#navlinks {
+    display: flex; /* Oculta el menú principal */
+}
+#sidebarToggle {
+    display: none;
+}
+
+@media screen and (max-width: 650px) {
+    #navlinks {
+        display: none; /* Oculta el menú principal */
+    }
+    #sidebarToggle {
+        display: block; /* Muestra el icono de menú */
+    }
+}

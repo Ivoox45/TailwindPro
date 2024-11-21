@@ -35,8 +35,12 @@
                         Tailwind Guide
                     </span>
                 </a>
+
                 <!-- Navigation Links -->
-                <ul class="flex space-x-8 text-gray-300">
+                <ul
+                    id="navlinks"
+                    class="hidden lg:flex space-x-8 text-gray-300"
+                >
                     <li>
                         <a href="#tipografia" class="hover:text-blue-400"
                             >Tipografía</a
@@ -61,8 +65,78 @@
                         >
                     </li>
                 </ul>
+
+                <!-- Button for Sidebar Toggle -->
+                <button
+                    id="sidebarToggle"
+                    class="lg:hidden p-2 text-gray-300 hover:text-blue-400 focus:outline-none"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"
+                        />
+                    </svg>
+                </button>
             </div>
         </nav>
+
+        <!-- Sidebar -->
+        <div
+            id="sidebar"
+            class="fixed top-0 right-[-100%] h-full w-64 bg-gray-800 text-gray-300 transition-all duration-300 ease-in-out z-50"
+        >
+            <div class="flex justify-end p-4 border-b border-gray-700">
+                <button
+                    id="closeSidebar"
+                    class="text-gray-300 hover:text-blue-400"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        class="w-6 h-6"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                </button>
+            </div>
+            <ul class="space-y-4 p-4">
+                <li>
+                    <a href="#tipografia" class="hover:text-blue-400"
+                        >Tipografía</a
+                    >
+                </li>
+                <li>
+                    <a href="#botones" class="hover:text-blue-400">Botones</a>
+                </li>
+                <li>
+                    <a href="#formulario" class="hover:text-blue-400"
+                        >Formulario</a
+                    >
+                </li>
+                <li>
+                    <a href="#modal" class="hover:text-blue-400">Modal</a>
+                </li>
+                <li>
+                    <a href="#carousel" class="hover:text-blue-400">Carrusel</a>
+                </li>
+            </ul>
+        </div>
 
         <section
             class="min-h-screen flex flex-col items-center justify-center relative text-center pt-16 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"
@@ -95,6 +169,50 @@
             >
                 Comenzar Tutorial
             </a>
+
+            <!-- SIDEBAR -->
+            <div
+                id="sidebar"
+                class="fixed top-0 right-0 h-full w-64 bg-gray-800 text-gray-300 transform translate-x-full transition-transform duration-300 ease-in-out z-20"
+            >
+                <div class="flex flex-col p-4 space-y-6">
+                    <!-- Close Button -->
+                    <button
+                        id="closeSidebar"
+                        class="self-end text-gray-300 hover:text-blue-400 focus:outline-none"
+                    >
+                        ✖
+                    </button>
+                    <!-- Links -->
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#tipografia" class="hover:text-blue-400"
+                                >Tipografía</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#botones" class="hover:text-blue-400"
+                                >Botones</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#formulario" class="hover:text-blue-400"
+                                >Formulario</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#modal" class="hover:text-blue-400"
+                                >Modal</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#carousel" class="hover:text-blue-400"
+                                >Carrusel</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Tipografía y Espaciado -->
@@ -471,7 +589,14 @@
         </section>
 
         <!-- Carousel -->
-        <div class="flex items-center justify-center bg-gray-900">
+
+        <div
+            id="carousel"
+            class="flex items-center justify-center bg-gray-900 flex-col pt-5"
+        >
+            <h2 class="text-3xl font-bold text-center mb-8 mt-2">
+                Carrusel de Imagenes
+            </h2>
             <div class="relative overflow-hidden w-full max-w-lg">
                 <!-- Contenido del carrusel (slides, botones, indicadores) -->
                 <div
@@ -589,9 +714,7 @@
 
         <section id="progreso" class="py-16 bg-gray-900">
             <div class="container mx-auto px-4">
-                <h2
-                    class="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text"
-                >
+                <h2 class="text-3xl font-bold text-center mb-8">
                     Indicadores de Progreso
                 </h2>
                 <div class="space-y-12 max-w-4xl mx-auto">
@@ -728,7 +851,7 @@
                 <h2
                     class="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text"
                 >
-                    Notificaciones Mejoradas
+                    Notificaciones
                 </h2>
                 <div class="flex flex-wrap justify-center gap-4">
                     <!-- Botón para Mostrar Notificación Básica -->
@@ -761,14 +884,6 @@
                         class="px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition"
                     >
                         Notificación de Advertencia
-                    </button>
-
-                    <!-- Botón para Mostrar Notificación con Animación -->
-                    <button
-                        id="showAnimatedToast"
-                        class="px-6 py-3 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition"
-                    >
-                        Notificación Animada
                     </button>
                 </div>
 
@@ -863,7 +978,7 @@
                 <h2
                     class="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text"
                 >
-                    Accordion Mejorado
+                    Accordion
                 </h2>
                 <div class="space-y-6">
                     <!-- Accordion con Icono -->

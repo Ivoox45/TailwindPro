@@ -158,4 +158,33 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initialize the framework carousel
         updateFrameworkCarousel();
     }
+    const sidebar = document.getElementById("sidebar");
+    const sidebarToggle = document.getElementById("sidebarToggle");
+    const closeSidebar = document.getElementById("closeSidebar");
+
+    // Función para abrir el sidebar
+    const openSidebar = () => {
+        sidebar.classList.remove("hidden"); // Elimina la clase hidden
+        sidebar.style.right = "0"; // Mueve el sidebar a la posición visible
+    };
+
+    // Función para cerrar el sidebar
+    const closeSidebarFn = () => {
+        sidebar.style.right = "-100%"; // Oculta el sidebar fuera de la pantalla
+        setTimeout(() => {
+            sidebar.classList.add("hidden"); // Vuelve a añadir la clase hidden después de la transición
+        }, 300); // Tiempo igual al de la transición (300ms)
+    };
+
+    // Evento para alternar el sidebar
+    sidebarToggle.addEventListener("click", () => {
+        if (sidebar.style.right === "0px") {
+            closeSidebarFn(); // Cierra el sidebar si ya está abierto
+        } else {
+            openSidebar(); // Abre el sidebar si está cerrado
+        }
+    });
+
+    // Evento para cerrar el sidebar con el botón de cerrar
+    closeSidebar.addEventListener("click", closeSidebarFn);
 });
